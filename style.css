@@ -1,0 +1,46 @@
+BODY {
+    font-family: sans-serif;
+}
+
+#chat {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+}
+
+#input {
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    box-sizing:border-box;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 0 0 8px 8px;
+    border: none;
+    background-color: #eee;
+    outline: none;
+}
+
+#iframe {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    right: -100px;
+    bottom: -100px;
+}
+
+#sber_id_form {
+    width: 250px;
+    background-color: #eee;
+    padding: 40px;
+}
+
+#sber_id_form INPUT {
+    margin: 10px 0;
+    height: 30px;
+    width: 200px;
+}
