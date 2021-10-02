@@ -15,6 +15,7 @@ const onConnect = (wsClient) => {
                     console.log(jsonMessage.data);
                     const data = jsonMessage.data;
                     const mes = `Я вас узнал, ${data.client_id}. Вы прислали мне "${data.client_message}"`;
+                    console.log(mes)
                     wsClient.send(mes);
                     break;
                 default:
