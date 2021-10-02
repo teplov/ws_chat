@@ -5,7 +5,7 @@ const wsServer = new WebSocket.Server({ port: process.env.PORT || 9000 });
 const onConnect = (wsClient) => {
     console.log('Новый пользователь');
     // отправка приветственного сообщения клиенту
-    wsClient.send('Привет');
+    // wsClient.send('Привет');
     wsClient.on('message', (message) => {
         try {
             // сообщение пришло текстом, нужно конвертировать в JSON-формат
@@ -13,6 +13,9 @@ const onConnect = (wsClient) => {
             switch (jsonMessage.action) {
                 case 'client_send_message':
                     console.log(jsonMessage.data);
+                    const data = jsonMessage.data;
+                    const mes = `Я вас узнал, ${data.client_id}. Вы прислали мне "${data.client_message}"`;
+                    wsClient.send(mes);
                     break;
                 default:
                     console.log('Неизвестная команда');
